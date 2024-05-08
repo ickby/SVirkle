@@ -1,0 +1,39 @@
+{
+	"disabled_build_options": {
+		"disable_2d_physics": true,
+		"disable_3d": true,
+		"disable_3d_physics": true,
+		"disable_navigation": true,
+		"module_msdfgen_enabled": false,
+		"module_text_server_adv_enabled": false,
+		"module_text_server_fb_enabled": true,
+		"openxr": false,
+		"rendering_device": false,
+		"vulkan": false
+	},
+	"disabled_classes": [
+		"Animation",
+		"AnimationLibrary",
+		"AnimationMixer",
+		"AnimationNode",
+		"AnimationNodeStateMachinePlayback",
+		"AnimationNodeStateMachineTransition",
+		"AudioBusLayout",
+		"AudioEffect",
+		"AudioStream",
+		"AudioStreamPlayer",
+		"HTTPRequest",
+		"InstancePlaceholder",
+		"MultiplayerSpawner",
+		"MultiplayerSynchronizer",
+		"NavigationAgent2D",
+		"NavigationAgent3D",
+		"Node3D",
+		"ResourcePreloader",
+		"ShaderGlobalsOverride",
+		"SkeletonIK3D",
+		"Viewport",
+		"WorldEnvironment"
+	],
+	"type": "build_profile"
+}

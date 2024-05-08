@@ -1,0 +1,87 @@
+[gd_scene load_steps=3 format=3 uid="uid://cadqxlqp781ml"]
+
+[ext_resource type="Script" path="res://Network/lobby.gd" id="1_4l6wj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0rexn"]
+font_size = 24
+font_color = Color(1, 0, 0, 1)
+outline_color = Color(1, 0.101961, 0.113725, 1)
+
+[node name="Lobby" type="Control"]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4l6wj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="Gamestate" type="Label" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Game currently running, wait for it to finish"
+label_settings = SubResource("LabelSettings_0rexn")
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "You"
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Name" type="LineEdit" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Enter User Name"
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+
+[node name="Ready" type="CheckButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Ready"
+
+[node name="Control" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "All players"
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="Players" type="VBoxContainer" parent="VBoxContainer/Panel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[connection signal="text_submitted" from="VBoxContainer/HBoxContainer/Name" to="." method="_on_name_text_submitted"]
+[connection signal="toggled" from="VBoxContainer/HBoxContainer/Ready" to="." method="_on_ready_toggled"]

@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcmdf8m74nrtu"]
+
+[ext_resource type="Script" path="res://SVirkle.gd" id="1_fetk8"]
+
+[node name="SVirkle" type="Node"]
+script = ExtResource("1_fetk8")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 4.0
+offset_right = 1152.0
+offset_bottom = 655.0
+
+[node name="Client_button" type="Button" parent="Control"]
+layout_mode = 2
+offset_left = 595.0
+offset_top = 280.0
+offset_right = 807.0
+offset_bottom = 346.0
+text = "Client
+"
+
+[node name="Server_Button" type="Button" parent="Control"]
+layout_mode = 2
+offset_left = 368.0
+offset_top = 280.0
+offset_right = 580.0
+offset_bottom = 346.0
+text = "Server"
+
+[connection signal="pressed" from="Control/Client_button" to="." method="_on_client_button_pressed"]
+[connection signal="pressed" from="Control/Server_Button" to="." method="_on_server_button_pressed"]

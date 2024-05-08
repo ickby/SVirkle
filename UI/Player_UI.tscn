@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://cntkcbb8rjyk2"]
+
+[ext_resource type="Script" path="res://UI/Player_UI.gd" id="1_ebvy6"]
+[ext_resource type="StyleBox" uid="uid://cn1nhui5udv4k" path="res://Assets/ui_theme.tres" id="1_ecq55"]
+[ext_resource type="PackedScene" uid="uid://ck38m1sv78ioq" path="res://UI/StoneArea_UI.tscn" id="2_dcdaw"]
+
+[node name="PlayerUI" type="PanelContainer"]
+custom_minimum_size = Vector2(370, 80)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -80.0
+offset_right = 200.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 6
+size_flags_vertical = 10
+theme_override_styles/panel = ExtResource("1_ecq55")
+script = ExtResource("1_ebvy6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "NamePlaceholder"
+horizontal_alignment = 1
+
+[node name="StoneContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="StoneAreaUi" parent="VBoxContainer/StoneContainer" instance=ExtResource("2_dcdaw")]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/StoneContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/StoneContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="Points" type="Label" parent="VBoxContainer/StoneContainer/VBoxContainer"]
+layout_mode = 2
+text = "215"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/StoneContainer/VBoxContainer"]
+layout_mode = 2
+text = "Points
+"
